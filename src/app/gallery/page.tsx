@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { cinzelDecorative } from "@/assets/fonts";
 
 export default function Gallery() {

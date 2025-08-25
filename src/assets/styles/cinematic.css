@@ -1,0 +1,6 @@
+.cinematic {
+  mask: url(#mask);
+  -webkit-mask: url(#mask);
+  -webkit-mask-type: alpha;
+  mask-type: alpha;
+}
