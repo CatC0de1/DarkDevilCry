@@ -31,21 +31,21 @@ function Navbar() {
           <motion.li variants={itemDesktopVariants} whileHover="hover" whileTap="tap" className="relative">
             <Link href="/">Home</Link>
             <motion.span
-              className="absolute z-20 left-0 -bottom-1 h-[2px] bg-[#B80B32]"
+              className="absolute z-20 left-0 -bottom-1 h-[2px] bg-brand-red"
               variants={underlineVariants}
             />
           </motion.li>
           <motion.li variants={itemDesktopVariants} whileHover="hover" whileTap="tap" className="relative">
             <Link href="/gallery">Gallery</Link>
             <motion.span
-              className="absolute left-0 -bottom-1 h-[2px] bg-[#B80B32]"
+              className="absolute left-0 -bottom-1 h-[2px] bg-brand-red"
               variants={underlineVariants}
             />
           </motion.li>
           <motion.li variants={itemDesktopVariants} whileHover="hover" whileTap="tap" className="relative">
             <Link href="/about">About</Link>
             <motion.span
-              className="absolute left-0 -bottom-1 h-[2px] bg-[#B80B32]"
+              className="absolute left-0 -bottom-1 h-[2px] bg-brand-red"
               variants={underlineVariants}
             />
           </motion.li>
