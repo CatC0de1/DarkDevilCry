@@ -18,7 +18,7 @@ function Parallax({ title, imageSrc, imageAlt }: ParallaxProps) {
   const y = useTransform(scrollY, [0, 1000], [0, -500]);  // add transformation, if scroll 0 to 1000, move 0 to 200px
 
   return (
-    <div className="parallax relative h-100 w-full overflow-hidden border-b-2 border-b-brand-red">
+    <div className="parallax relative h-100 w-full overflow-hidden border-b-2 border-b-brand-white">
       <motion.div 
         className="relative w-full min-h-200 inset-0"
         style={{ y }}
@@ -44,7 +44,7 @@ function Parallax({ title, imageSrc, imageAlt }: ParallaxProps) {
             absolute bottom-0 left-1/2 -translate-x-1/2
             drop-shadow-2xl px-6 py-2 bg-[rgba(222,222,222,0.7)]
             text-[#171717] text-2xl
-            border-2 border-b-0 border-brand-red
+            border-2 border-b-0 border-brand-white
           `}
       >
         {title}

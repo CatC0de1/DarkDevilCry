@@ -15,6 +15,7 @@
   --color-brand-red: #B80B32;
   --color-purple-primary: #4B0082;
   --color-purple-secondary: #6A0DAD;
+  --color-brand-white: #AAA;
 }
 
 @media (prefers-color-scheme: dark) {
