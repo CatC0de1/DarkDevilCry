@@ -1,0 +1,11 @@
+@media (max-width: 957px) and (orientation: landscape) {
+  .mobile-landscape-home {
+    flex-direction: row;
+    width: 50%;
+    bottom: 10%;
+  }
+
+  .parallax {
+    height: 200px;
+  }
+}
