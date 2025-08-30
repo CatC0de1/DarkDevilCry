@@ -3,12 +3,14 @@ import { easeIn, easeInOut, easeOut } from "motion";
 export const menuVariants = {
   hidden: {
     opacity: 0.8,
-    y: -160,
+    // y: -160,
+    scaleY: 0,
     transition: { duration: 0.5 }
   },
   visible: {
     opacity: 1,
-    y: 0,
+    // y: 0,
+    scaleY: 1,
     transition: { 
       duration: 0.4,
       when: "beforeChildren",
@@ -18,7 +20,8 @@ export const menuVariants = {
   },
   exit: {
     opacity: 0.8,
-    y: -160,
+    // y: -160,
+    scaleY: 0,
     transition: { 
       duration: 0.2,
       when: "afterChildren",

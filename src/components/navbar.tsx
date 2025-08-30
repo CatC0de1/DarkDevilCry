@@ -1,25 +1,42 @@
 "use client";
 import { useState } from "react";
 
-import { motion, AnimatePresence, } from "motion/react";
+import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
 import { menuVariants, leftItemVariants, rightItemVariants, itemDesktopVariants, underlineVariants } from "@/assets/motion/navbar";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cinzelDecorative } from "@/assets/fonts";
 
 import Hamburger from "./hamburger";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   return (
     <nav>
+      { pathname !== "/" && (
+        <motion.div 
+          style={{ scaleX, transformOrigin: "left"  }} 
+          className="w-full h-1 top-0 fixed z-5 bg-brand-red"
+        />
+      )}
+
       <div 
-        className="
-          w-[85%] md:w-[60%] fixed top-0 left-1/2 -translate-x-1/2 z-10
+        className={`
+          w-[85%] md:w-[60%] fixed top-4 left-1/2 -translate-x-1/2 z-10
           flex flex-row justify-evenly md:justify-around items-center 
-          py-4 bg-black shadow-lg
-        "
+          py-4 bg-black shadow-lg 
+          ${pathname !== "/" && "border-l-8 border-purple-primary"}
+        `}
       >
 
         <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
@@ -57,15 +74,16 @@ function Navbar() {
 
       </div>
 
-      {/* Menu mobile (sm) */}
+      {/* Menu mobile (sm) */}      
       <AnimatePresence>
         {isOpen && (
           <motion.ul 
-            className="
-              flex lg:hidden flex-col items-center gap-4 
-              w-[85%] md:w-[60%] top-0 left-1/2 -translate-x-1/2 fixed z-5 pb-6 pt-18 
-              bg-linear-to-b from-black to-[#111] 
-            "
+            className={`
+              flex lg:hidden flex-col items-center gap-4 origin-top
+              w-[85%] md:w-[60%] top-4 left-1/2 -translate-x-1/2 fixed z-5 pb-6 pt-18 
+              bg-linear-to-b from-black ${pathname === "/" ? "to-[#111]" : "to-[#252525]" }
+              ${pathname !== "/" && "border-l-8 border-purple-primary"}
+            `}
             variants={menuVariants}
             initial="hidden"
             animate="visible"
