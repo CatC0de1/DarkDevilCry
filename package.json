@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev-mobile": "next dev --turbopack -H 0.0.0.0",
+    "start-mobile": "next start -H 0.0.0.0"
   },
   "dependencies": {
     "motion": "^12.23.12",
