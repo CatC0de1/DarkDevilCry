@@ -1,0 +1,7 @@
+home:
+
+animasi 2 tombol muncul dari bawah saat di hover / click
+
+gallery:
+
+3 row, images slider loop
